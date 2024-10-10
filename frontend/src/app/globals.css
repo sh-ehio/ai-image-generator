@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -20,7 +22,9 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-optical-sizing: auto;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: 1fr;
