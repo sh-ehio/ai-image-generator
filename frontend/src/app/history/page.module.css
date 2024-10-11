@@ -1,0 +1,6 @@
+.page {
+  background-color: #121826;
+  padding: 52px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}

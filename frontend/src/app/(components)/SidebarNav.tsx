@@ -72,19 +72,19 @@ const SidebarNav = () => {
               alt="Icon picturing two little stars"
             ></Image>
           </NavItem>
-          <NavItem href="/feed" active={pathname === "/apps"}>
+          <NavItem href="/feed" active={pathname === "/feed"}>
             <Image
               src={AppsIconImg}
               alt="Icon picturing 4 little squares one of them being white and the other ones grey"
             ></Image>
           </NavItem>
-          <NavItem href="/time" active={pathname === "/time"}>
+          <NavItem href="/history" active={pathname === "/history"}>
             <Image
               src={TimeAttackIconImg}
               alt="Icon picturing a circle with 3/4 of the circle filled in"
             ></Image>
           </NavItem>
-          <NavItem href="/folder" active={pathname === "/folder"}>
+          <NavItem href="/collections" active={pathname === "/collections"}>
             <Image src={FolderIconImg} alt="Icon picturing a folder"></Image>
           </NavItem>
         </InteractionHolder>
