@@ -3,6 +3,9 @@
 import { useState } from "react";
 import styles from "./page.module.css";
 import styled from "styled-components";
+import StarIconImgSrc from "../../public/assets/Magic.svg";
+import PlaceholderImgSrc from "../../public/assets/Box-shape.png";
+import Image from "next/image";
 
 const InputFieldHolder = styled.div`
   display: flex;
@@ -38,17 +41,17 @@ const Label = styled.label`
 const InputElementContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 `;
 
 const ColorOptionHolder = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 12px;
 `;
 
 const CircleButton = styled.button<{ $color?: string }>`
-  height: 30px;
-  width: 30px;
+  height: 31px;
+  width: 32px;
   border-radius: 50%;
   border: none;
   background-color: ${(props) => props.$color};
@@ -68,8 +71,7 @@ const ResolutionHolder = styled.div`
 const ResolutionButton = styled.button<{ $selected?: boolean }>`
   background-color: ${(props) => (props.$selected ? "#7C71FF" : "#212936")};
   color: #e4e4e7;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 8px 12px;
   border-radius: 10px;
   font-size: 12px;
   border: none;
@@ -77,6 +79,57 @@ const ResolutionButton = styled.button<{ $selected?: boolean }>`
   &:hover {
     filter: brightness(1.2);
   }
+`;
+
+const GenerateButton = styled.button`
+  background-color: #7c71ff;
+  border-radius: 10px;
+  border: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+`;
+
+const ButtonText = styled.p`
+  font-size: 14px;
+  font-weight: 700;
+`;
+
+const ButtonInfoHolder = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`;
+
+const GeneratedImageHolder = styled.div`
+  max-width: 525px;
+  max-height: 525px;
+  width: 100%;
+  height: 100%;
+  background-color: #212936;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+`;
+
+const PlaceholderImage = styled(Image)`
+  max-height: 50%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  z-index: 99999;
 `;
 
 export default function Home() {
@@ -155,9 +208,20 @@ export default function Home() {
           </ResolutionHolder>
         </InputElementContainer>
         <InputElementContainer>
-          <Label>Guidance</Label>
+          <GenerateButton>
+            <ButtonInfoHolder>
+              <Image src={StarIconImgSrc} alt="twinkling stars icon"></Image>
+              <ButtonText>Generate Image</ButtonText>
+            </ButtonInfoHolder>
+          </GenerateButton>
         </InputElementContainer>
       </InputFieldHolder>
+      <GeneratedImageHolder>
+        <PlaceholderImage
+          src={PlaceholderImgSrc}
+          alt="Placeholder Generation Image"
+        />
+      </GeneratedImageHolder>
     </div>
   );
 }

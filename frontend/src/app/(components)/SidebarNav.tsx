@@ -72,7 +72,7 @@ const SidebarNav = () => {
               alt="Icon picturing two little stars"
             ></Image>
           </NavItem>
-          <NavItem href="/apps" active={pathname === "/apps"}>
+          <NavItem href="/feed" active={pathname === "/apps"}>
             <Image
               src={AppsIconImg}
               alt="Icon picturing 4 little squares one of them being white and the other ones grey"
