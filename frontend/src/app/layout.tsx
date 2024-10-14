@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import SidebarNav from "./(components)/SidebarNav";
+import { cookies } from "next/headers";
+import Modal from "./(components)/Modal";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,9 +26,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = cookies(); // Can only use in Server Components
+  const token = cookieStore.get("access_token");
+
+  const isLoggedIn = !!token; // Check if token is present
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Modal isOpen={!isLoggedIn} />
         <SidebarNav />
         {children}
       </body>

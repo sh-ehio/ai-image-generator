@@ -38,7 +38,7 @@ const UpperNavbarSection = styled.div`
   align-items: center;
 `;
 
-const NavItem = styled(Link)<{ active?: boolean }>`
+const NavItem = styled(Link)<{ active?: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,30 +66,42 @@ const SidebarNav = () => {
           style={{ marginBottom: "50px" }}
         ></Image>
         <InteractionHolder>
-          <NavItem href="/" active={pathname === "/"}>
+          <NavItem href="/" active={pathname === "/" ? "true" : "false"}>
             <Image
               src={MagicIconImg}
               alt="Icon picturing two little stars"
             ></Image>
           </NavItem>
-          <NavItem href="/feed" active={pathname === "/feed"}>
+          <NavItem
+            href="/feed"
+            active={pathname === "/feed" ? "true" : "false"}
+          >
             <Image
               src={AppsIconImg}
               alt="Icon picturing 4 little squares one of them being white and the other ones grey"
             ></Image>
           </NavItem>
-          <NavItem href="/history" active={pathname === "/history"}>
+          <NavItem
+            href="/history"
+            active={pathname === "/history" ? "true" : "false"}
+          >
             <Image
               src={TimeAttackIconImg}
               alt="Icon picturing a circle with 3/4 of the circle filled in"
             ></Image>
           </NavItem>
-          <NavItem href="/collections" active={pathname === "/collections"}>
+          <NavItem
+            href="/collections"
+            active={pathname === "/collections" ? "true" : "false"}
+          >
             <Image src={FolderIconImg} alt="Icon picturing a folder"></Image>
           </NavItem>
         </InteractionHolder>
       </UpperNavbarSection>
-      <NavItem href="/signout" active={pathname === "/signout"}>
+      <NavItem
+        href="/signout"
+        active={pathname === "/signout" ? "true" : "false"}
+      >
         <Image
           src={SignoutIconImg}
           alt="Icon picturing a square with an arrow pointing out of it to the right side"

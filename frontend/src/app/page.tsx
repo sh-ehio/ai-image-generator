@@ -129,7 +129,6 @@ const PlaceholderImage = styled(Image)`
   object-fit: contain;
   display: block;
   margin: 0 auto;
-  z-index: 99999;
 `;
 
 export default function Home() {
