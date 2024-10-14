@@ -46,7 +46,7 @@ const NavItem = styled(Link)<{ active?: string }>`
   border-radius: 8px;
   transition: background-color 0.3s ease;
   ${({ active }) =>
-    active &&
+    active === "true" &&
     css`
       background-color: #7c71ff; /* Custom background color for active item */
     `}
